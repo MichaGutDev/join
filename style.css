@@ -1,0 +1,10 @@
+:root {
+    --color-primary: hsl(218, 100%, 54%);
+    --color-button-hover: hsl(217, 100%, 91%);
+    --color-dark-font: hsl(218, 25%, 35%);
+    --color-in-form-font: hsl(0, 0%, 41%);
+    --color-outer-form-font: hsl(0, 0%, 27%);
+    --color-login-privacy-policy: hsl(218, 100%, 50%);
+    --color-task-user-story: hsl(29, 100%, 50%);
+    --color-task-technical: hsl(227, 100%, 50%);
+}
