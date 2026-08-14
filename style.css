@@ -24,6 +24,11 @@
     --color-contact-mail: rgb(0, 124, 238);
 }
 
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -39,20 +44,74 @@ main {
     flex: 1;
 }
 
-header {
-    background-color: white;
+.header {
+    height: 80px;
+
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    padding: 0 32px 0 64px;
+
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.help-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.help-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+
+    background-color: white;
+
+    font-weight: 700;
+    color: var(--color-login-initials);
+
+    cursor: pointer;
 }
 
 aside {
     background-color: var(--color-primary);
     max-width: 20vw;
+    width: 200px;
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    align-items: center;
+    padding: 40px 0px;
+}
+
+.aside-join-icon {
+    height: 30%;
 }
 
 aside img {
@@ -64,22 +123,29 @@ aside img {
     aspect-ratio: 1/1;
 }
 
-nav li a{
+.sidebar-nav {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
     align-items: center;
+    gap: 12px;
+
+    padding: 16px 32px;
+
+    color: white;
     text-decoration: none;
-    gap: 5px;
 }
 
-nav li a span {
-    color: var(--color-light-font);
+.nav-item img {
+    width: 20px;
+    height: 20px;
 }
 
-.nav-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.nav-item.active {
+    background-color: var(--color-nav-active);
 }
