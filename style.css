@@ -1,10 +1,30 @@
 :root {
-    --color-primary: hsl(218, 100%, 54%);
-    --color-button-hover: hsl(217, 100%, 91%);
+    --color-primary: rgb(42, 54, 71);
+
+    --color-bg-main: rgb(246, 247, 248);
+
+    --color-light-font: rgb(231, 231, 231);
+    --color-active-font: rgb(255, 255, 255);
     --color-dark-font: hsl(218, 25%, 35%);
-    --color-in-form-font: hsl(0, 0%, 41%);
+
+
+    --color-form-box: rgb(104, 104, 104);
     --color-outer-form-font: hsl(0, 0%, 27%);
-    --color-login-privacy-policy: hsl(218, 100%, 50%);
-    --color-task-user-story: hsl(29, 100%, 50%);
-    --color-task-technical: hsl(227, 100%, 50%);
+
+    --color-login-privacy-policy: rgb(18, 70, 88);
+
+    --color-task-user-story: rgb(0, 56, 255);
+    --color-task-technical: rgb(31, 215, 193);
+    --color-nav-active: rgb(9, 25, 49);
+
+
+    --color-login-initials: rgb(18, 70, 88);
+
+    --color-underscore: rgb(41, 171, 226);
+
+    --color-contact-mail: rgb(0, 124, 238);
+}
+
+body {
+    margin: 0;
 }
