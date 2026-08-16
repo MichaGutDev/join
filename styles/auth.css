@@ -98,3 +98,22 @@
   justify-content: center;
   gap: 35px;
 }
+
+.login-footer {
+    display: flex;
+    gap: 32px;
+    padding-bottom: 38px;
+}
+
+.login-footer a {
+    color: var(--color-form-box);
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    color: var(--color-login-privacy-policy);
+    font-weight: 700;
+}
+
