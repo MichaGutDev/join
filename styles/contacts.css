@@ -1,0 +1,132 @@
+.section-main-content {
+    display: flex;
+}
+
+.separator {
+    border-bottom: solid rgb(218, 218, 218) 1px;
+}
+
+.contact-list-container {
+    border-right: solid black 1px;
+    /* remove this line */
+
+    height: calc(100vh - 80px);
+    min-width: 424px;
+    width: 424px;
+    overflow-y: auto;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 36px 0 36px;
+}
+
+.button-add-new-contact {
+    background-color: #2A3647;
+    color: white;
+    height: 56px;
+    width: 100%;
+    border-radius: 10px;
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add-new-contact-box {
+    height: 32px;
+    width: 32px;
+}
+
+.add-new-contact-icon {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-list {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0
+}
+
+.contact-content {
+    display: flex;
+    gap: 20px;
+}
+
+.initials-box {
+    min-height: 42px;
+    min-width: 42px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 24px;
+}
+
+.contact-initials {
+    color: white;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.test {
+    background-color: lightblue;
+    height: 50px;
+    width: 50px;
+}
+
+.container-contact-details {
+    height: 100%;
+    width: calc(100% - 38px);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-details-header {
+    height: 73px;
+    /* width: 569px; */
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-details-title {
+    height: 100%;
+    width: 274px;
+    font-size: 61px;
+    font-weight: 700;
+}
+
+.contact-details-slogan {
+    width: 235px;
+    font-size: 27px;
+    font-weight: 40;
+    text-align: end;
+}
+
+.contact-header-separator {
+    background-color: #29ABE2;
+    height: 59px;
+    width: 3px;
+    border-radius: 3px;
+}
