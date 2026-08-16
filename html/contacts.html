@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../styles/contacts.css">
+    <link rel="stylesheet" href="/styles/contacts.css">
+    <link rel="stylesheet" href="/styles/contact_color.css">
 </head>
 
-<body>
+<body onload="init()">
     <aside>
         <div class="aside-join-icon">
             <img src="/assets/icons/main-icon.svg" alt="">
@@ -55,32 +56,31 @@
             </div>
         </header>
 
-        <section>
-            <div> <!-- Scrollable, column -->
-                <div> <!-- Add Contact Button, Javascript -->
-                    <button>Add Contact</button>
-                    <img src="../assets/icons/add-task-icon.svg" alt="">
-                </div>
-
-                <div>
-                    <h4>A</h4> <!-- Alphabetical Section -->
-                    <!-- Trennlinie -->
-                    <div> 
-                        <div></div> <!-- Contact initials -->
-                        <div>
-                            <span>Sebastian Opielka</span> <!-- Contact Name -->
-                            <span>Contact Email</span> <!-- Contact Email -->
-                        </div>
+        <section class="section-main-content">
+            <div class="contact-list-container">
+                <div class="button-add-new-contact">
+                    <span>Add New Contact</span>
+                    <div class="add-new-contact-box">
+                        <img class="add-new-contact-icon" src="/assets/icons/add-contact-icon.svg" alt="">
                     </div>
                 </div>
+                <div id="contact_list" class="contact-list">
 
+                </div>
+            </div>
+            <div class="container-contact-details">
+                <div class="contact-details-header">
+                    <h2 class="contact-details-title">Contacts</h2>
+                    <div class="contact-header-separator"></div>
+                    <span class="contact-details-slogan">Better with a Team</span>
+                </div>
             </div>
         </section>
-
     </main>
 
 
 </body>
 <script src="../script.js"></script>
+<script src="../js/contact.js"></script>
 
 </html>
