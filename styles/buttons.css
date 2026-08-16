@@ -1,0 +1,45 @@
+/*
+ * Globale Button-Basis-Klassen, für die ganze App.
+ * Prinzip: .btn = gemeinsame Basis (Padding, Radius, Font, Transition),
+ * .btn-primary / .btn-secondary = Farbvarianten oben drauf.
+ * Immer BEIDE Klassen zusammen im HTML verwenden: class="btn btn-primary"
+ *
+ * NICHT hier rein sollten aus meiner Sicht: Icon-Buttons, Priority-Toggle, Avatar-Kreis o.ä. –
+ * die sind zu speziell/seitenspezifisch und gehören in die jeweilige
+ * Komponenten-CSS (z.B. board.css), nicht hier in die globalen Basics.
+ */
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 24px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3125rem;
+    font-weight: 700;
+    transition: 100ms; /* Checkliste: 75-125ms bei klickbaren Elementen */
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-login-privacy-policy);
+}
+
+.btn-secondary:hover {
+    border: 2px solid var(--color-login-privacy-policy);
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
