@@ -2,16 +2,19 @@ const users = [
   {
     id: 1,
     name: "User 1",
+    surname: "Surname 1",
     email: "user1@example.com"
   },
   {
     id: 2,
     name: "User 2",
+    surname: "Surname 1",
     email: "user2@example.com"
   },
   {
     id: 3,
     name: "User 3",
+    surname: "Surname 1",
     email: "user3@example.com"
   }
 ];
