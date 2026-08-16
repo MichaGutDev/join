@@ -5,62 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
+    <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/auth.css">
 </head>
 
 <body>
-    <aside>
-        <img src="/assets/icons/main-icon.svg" alt="">
-        <nav>
-            <ul class="nav-list">
-                <li>
-                    <a href="">
-                        <img class="nav-icon" src="/assets/icons/summary-icon.svg" alt="">
-                        <span>Summary</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img class="nav-icon" src="/assets/icons/add-task-icon.svg" alt="">
-                        <span>Add Task</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img class="nav-icon" src="/assets/icons/board-icon.svg" alt="">
-                        <span>Board</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img class="nav-icon" src="/assets/icons/contacts-icon.svg" alt="">
-                        <span>Contacts</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+    <header class="login-header">
+        <img src="./assets/icons/login-icon.svg" alt="Join Icon" class="login-icon">
+        <div class="header-right">
+            <p>Not a Join User?</p>
+            <button class="btn btn-primary">Sign Up</button>
+        </div>
+    </header>
 
     <main>
+        <form onsubmit="login()" novalidate>
+            <h1>Log in</h1>
+            <label for="email">
+                <span class="visually-hidden">Required field: Email address</span>
+                <input type="email" required id="email" placeholder="Email">
+                <img src="./assets/icons/mail-icon.svg" alt="Mail Icon">
+            </label>
+            <label for="password">
+                <span class="visually-hidden">Required field: password</span>
+                <input type="password" required id="password" placeholder="Password">
+                <img src="./assets/icons/lock-icon.svg" alt="Lock Icon">
+            </label>
+            <button type="submit">Log in</button>
+            <button type="button">Guest Log in</button>
+        </form>
 
-        <header>
-            <h2>Kanban Project Management Tool</h2>
-            <div class="">
-                <a href="">
-                    <img src="/assets/icons/help-questionmark-icon.svg" alt="">
-                </a>
-                <a href="" class="user-header">
-                    <img src="/assets/icons/user-circle-icon.svg" alt="">
-                    <span class="initials">SM</span>
-                </a>
-            </div>
 
-        </header>
 
     </main>
 
+    <footer class="login-footer">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Legal notice</a>
+    </footer>
 
-</body>
 <script src="script.js"></script>
+<script src="js/auth.js"></script>
+</body>
 
 </html>
