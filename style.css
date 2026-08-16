@@ -42,6 +42,13 @@
     border: 0;
 }
 
+/* Basis-Typografie – globale Standard-Elemente */
+h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+
 body {
   margin: 0;
   min-height: 100vh;
