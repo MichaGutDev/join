@@ -1,4 +1,4 @@
-.login-body {
+.auth-body {
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -9,14 +9,14 @@
   background-color: var(--color-bg-main);
 }
 
-.login-main {
-    width: 100%;
-    flex: 1;
-    display: flex;
-    align-items: center;
+.auth-main {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
-.login-header {
+.auth-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-.login-header-content {
+.auth-header-content {
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -33,18 +33,19 @@
   max-width: 1440px;
 }
 
-.login-header-right {
+.auth-header-right {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.login-header-right p {
+.auth-header-right p {
   font-size: 20px;
   font-weight: 400;
 }
 
-.login-card {
+.auth-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 48px 115px;
@@ -56,11 +57,11 @@
   max-width: 40.75rem;
 }
 
-.login-card h1 {
+.auth-card h1 {
   text-align: center;
 }
 
-.login-card h1::after {
+.auth-card h1::after {
   content: "";
   display: block;
   width: 150px;
@@ -69,7 +70,7 @@
   margin: 16px auto 0;
 }
 
-.login-card label {
+.auth-field {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,7 +81,7 @@
   background-color: white;
 }
 
-.login-card input {
+.auth-field input {
   border: none;
   outline: none;
   background: transparent;
@@ -89,31 +90,45 @@
   font-weight: 400;
 }
 
-.login-card input::placeholder {
+.auth-field input::placeholder {
   color: var(--color-form-box);
 }
 
-.login-actions {
+.auth-actions {
   display: flex;
   justify-content: center;
   gap: 35px;
 }
 
-.login-footer {
-    display: flex;
-    gap: 32px;
-    padding-bottom: 38px;
+.auth-footer {
+  display: flex;
+  gap: 32px;
+  padding-bottom: 38px;
 }
 
-.login-footer a {
-    color: var(--color-form-box);
-    font-size: 1rem;
-    font-weight: 400;
-    text-decoration: none;
+.auth-footer a {
+  color: var(--color-form-box);
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
 }
 
-.login-footer a:hover {
-    color: var(--color-login-privacy-policy);
-    font-weight: 700;
+.auth-footer a:hover {
+  color: var(--color-login-privacy-policy);
+  font-weight: 700;
 }
 
+.privacy-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 64px;
+    left: 48px;
+    width: 32px;
+    height: 32px;
+}

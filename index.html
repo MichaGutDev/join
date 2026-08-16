@@ -11,31 +11,31 @@
     <link rel="stylesheet" href="styles/auth.css">
 </head>
 
-<body class="login-body">
-    <header class="login-header">
-        <div class="login-header-content">
-            <img src="./assets/icons/login-icon.svg" alt="Join Icon" class="login-icon">
-            <div class="login-header-right">
+<body class="auth-body">
+    <header class="auth-header">
+        <div class="auth-header-content">
+            <img src="./assets/icons/login-icon.svg" alt="Join Icon" class="auth-icon">
+            <div class="auth-header-right">
                 <p>Not a Join User?</p>
                 <button class="btn btn-primary">Sign Up</button>
             </div>
         </div>
     </header>
 
-    <main class="login-main">
-        <form class="login-card" onsubmit="login()" novalidate>
+    <main class="auth-main">
+        <form class="auth-card" onsubmit="login()" novalidate>
             <h1>Log in</h1>
-            <label for="email">
+            <label class="auth-field" for="email">
                 <span class="visually-hidden">Required field: Email address</span>
                 <input type="email" required id="email" placeholder="Email">
                 <img src="./assets/icons/mail-icon.svg" alt="Mail Icon">
             </label>
-            <label for="password">
+            <label class="auth-field" for="password">
                 <span class="visually-hidden">Required field: password</span>
                 <input type="password" required id="password" placeholder="Password">
                 <img src="./assets/icons/lock-icon.svg" alt="Lock Icon">
             </label>
-            <div class="login-actions">
+            <div class="auth-actions">
                 <button class="btn btn-primary" type="submit">Log in</button>
                 <button class="btn btn-secondary" type="button">Guest Log in</button>
             </div>
@@ -45,7 +45,7 @@
 
     </main>
 
-    <footer class="login-footer">
+    <footer class="auth-footer">
         <a href="#">Privacy Policy</a>
         <a href="#">Legal notice</a>
     </footer>
