@@ -42,12 +42,44 @@ let user = [{
     color: "orange"
 },
 {
-    id: 3,
+    id: 6,
     name: "Oliver",
     surName: "Pauls",
     telefon: "222-333-4444",
     email: "OliverPauls@example.com",
     color: "cyan"
+},
+{
+    id: 7,
+    name: "Maurice",
+    surName: "Kaisers",
+    telefon: "222-333-4444",
+    email: "MauriceKaisers@example.com",
+    color: "darkgreen"
+},
+{
+    id: 8,
+    name: "Svetlana",
+    surName: "Nova",
+    telefon: "222-333-4844",
+    email: "SvetlanaNova@example.com",
+    color: "darkred"
+},
+{
+    id: 9,
+    name: "Dennis",
+    surName: "Krombacher",
+    telefon: "222-333-4444",
+    email: "DennisKrombacher@example.com",
+    color: "darkblue"
+},
+{
+    id: 10,
+    name: "Natascha",
+    surName: "Di Salvos",
+    telefon: "222-333-4444",
+    email: "Nataschadisalvos@example.com",
+    color: "darkgreen"
 }
 ];
 
@@ -85,17 +117,17 @@ function generateContactTopicHTML(letter) {
 
 function generateContactHTML(initials, element) {
     return `
-            <div class="contact-list-item">
+            <button id="contact_${element.id}" onclick="highlightContact(${element.id})" class="contact-list-item">
                 <div class="contact-content">
                     <div class="initials-box">
                         <span class="contact-initials color-${element.color}">${initials}</span>
                     </div>
                     <div class="contact-item">
-                        <span>${element.name || ''} ${element.surName || ''}</span>
-                        <a href="mailto:${element.email || ''}">${element.email || ''}</a>
+                        <span class="contact-list-name">${element.name || ''} ${element.surName || ''}</span>
+                        <a class="contact-list-email" href="mailto:${element.email || ''}">${element.email || ''}</a>
                     </div>
                 </div>
-            </div>
+            </button>
             `
 }
 
@@ -133,14 +165,80 @@ function addContact() {
         email: document.getElementById('contact_email').value,
         color: randomColor
     };
+
     user.push(newContact);
+    clearContactForm();
+}
+
+function clearContactForm() {
+    document.getElementById('contact_name').value = '';
+    document.getElementById('contact_surname').value = '';
+    document.getElementById('contact_telefon').value = '';
+    document.getElementById('contact_email').value = '';
+}
+
+function highlightContact(contactId) {
+    for (let i = 0; i < user.length; i++) {
+        document.getElementById(`contact_${i + 1}`).classList.remove('btn-primary');
+    }
+    document.getElementById(`contact_${contactId}`).classList.add('btn-primary');
 }
 
 function pushContactToServer() {
 }
 
 function editContact() {
+    console.log("edit" + " " + user[0].name);
 }
     
 function deleteContact() {
+    console.log("delete" + " " + user[0].name);
 }
+
+
+function dialogAddContact() {
+    
+}
+
+function dialogEditContact() {
+    
+}
+
+function dialogContactSuccessAdded() {
+}
+
+// Alle User Stories und Akzeptanzkriterien sind erfüllt
+// Alle Features funktionieren fehlerfrei wie erwartet
+// Vor Abgabe werden min. 5 realistische Tasks und 10 Kontakte hinzugefügt
+// Alle Funktionialitäten von jedem Gruppenmitglied vor Abgabe manuell getestet mit aktuellsten Version Hauptbrowser
+// Github Repository auf public
+
+// Keine sensiblen Daten im Github Repository
+// Nach abschluss sollte jeder das Projekt Forken
+
+// Interaktions feedback
+// 1:1 nachbau aus dem Figma
+// btn Transitions
+// App optimiert auf mobile (auch querformat)
+// inputs und Btn keinen Border z.b. border: unset;
+
+// Console muss leer bleiben
+// Erstellter Content ist unmittelbar sichtbar
+
+// Form-Validation: Was passiert bei leeren Inputs? (kein HTML5 verwenden)
+
+// responsive min. 320px
+// content begrenzung (1440px oder 1920px/linksbündig)
+// Landscape modus deaktivieren mobile (ausser speziell optimiert)
+// kein scrollbalken bei kleinen auflösungen
+
+// Jede seite mind. eine JS-Datei
+// Allgemeine seitenübergreifende JS-Datei
+
+// Form Validierung
+// Erstellter Content direkt sichtbar
+// Button deaktivieren während der Ladezeit
+
+// Funktion nur 1 Aufgabe
+// Deutliche Funktionsnamen
+// 2 Leerzeichen Zwischen Funktionen

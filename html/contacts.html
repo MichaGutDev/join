@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
+    <link rel="stylesheet" href="/styles/standard.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="/styles/contacts.css">
     <link rel="stylesheet" href="/styles/contact_color.css">
+    <link rel="stylesheet" href="/styles/buttons.css">
 </head>
 
 <body onload="init()">
@@ -16,8 +18,6 @@
             <img src="/assets/icons/main-icon.svg" alt="">
 
         </div>
-
-
         <nav class="sidebar-nav">
             <a href="./summary.html" class="nav-item">
                 <img src="../assets/icons/summary-icon.svg" alt="">
@@ -58,12 +58,12 @@
 
         <section class="section-main-content">
             <div class="contact-list-container">
-                <div class="button-add-new-contact">
+                <button class="btn button-add-new-contact btn-primary">
                     <span>Add New Contact</span>
                     <div class="add-new-contact-box">
                         <img class="add-new-contact-icon" src="/assets/icons/add-contact-icon.svg" alt="">
                     </div>
-                </div>
+                </button>
                 <div id="contact_list" class="contact-list">
 
                 </div>
@@ -74,9 +74,39 @@
                     <div class="contact-header-separator"></div>
                     <span class="contact-details-slogan">Better with a Team</span>
                 </div>
+                <div class="contact-details-container">
+                    <div class="contact-details-item">
+                        <div class="contact-details-initials">
+                            <span>JW</span>
+                        </div>
+                        <div class="contact-details-name">
+                            <div class="contact-details-name-text">
+                                <span>John Doe</span>
+                            </div>
+                            <div class="contact-details-actions">
+                                <button onclick="editContact()"><img src="/assets/icons/login-icon.svg"
+                                        alt="">edit</button>
+                                <button onclick="deleteContact()"><img src="/assets/icons/login-icon.svg"
+                                        alt="">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-details-info">contact information</div>
+                    <div class="contact-details-connect-container">
+                        <div class="contact-details-connect">
+                            <span>Email</span>
+                            <a href="mailto:email@example.com">email@example.com</a>
+                        </div>
+                        <div class="contact-details-connect">
+                            <span>phone</span>
+                            <div>+49 2222 222 2</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+    <!-- <div class="dialog-container"></div> convert to Dialog Element -->
 
 
 </body>
