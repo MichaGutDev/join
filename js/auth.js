@@ -51,6 +51,19 @@ function handleFirebaseLogin(email, password) {
 }
 
 
+/**
+ *Shows the success toast and redirects to the login page after a short delay. 
+ */
+function showToast() {
+    const toast = document.getElementById('toast');
+    toast.style.display = 'flex';
+
+    setTimeout(() => {
+        window.location.href = '../index.html';
+    }, 800);
+}
+
+
 document.getElementById('login-form').addEventListener('submit', login);
 
 
