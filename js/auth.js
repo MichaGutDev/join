@@ -82,8 +82,10 @@ function signUp(event) {
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
+     clearError('signup-error', ['confirm-password']);
 
     if (password !== confirmPassword) {
+        showError('signup-error', ['confirm-password'], "Your passwords don't match. Please try again.");
         return;
     }
 
@@ -105,8 +107,8 @@ function handleFirebaseSignUp(name, email, password) {
         })
         .catch((error) => {
             console.log(error);
+            showError('signup-error', ['email'], 'Registration failed. Please try again.');
         });
-
 }
 
 
