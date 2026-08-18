@@ -106,8 +106,15 @@ function handleFirebaseSignUp(name, email, password) {
 }
 
 
-document.getElementById('login-form').addEventListener('submit', login);
-document.getElementById('signup-form').addEventListener('submit', signUp);
+const loginForm = document.getElementById('login-form');
+if (loginForm) {
+    loginForm.addEventListener('submit', login);
+}
+
+const signupForm = document.getElementById('signup-form');
+if (signupForm) {
+    signupForm.addEventListener('submit', signUp);
+}
 
 
 
