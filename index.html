@@ -30,11 +30,14 @@
                 <input type="email" required id="email" placeholder="Email">
                 <img src="./assets/icons/mail-icon.svg" alt="Mail Icon">
             </label>
-            <label class="auth-field" for="password">
-                <span class="visually-hidden">Required field: password</span>
-                <input type="password" required id="password" placeholder="Password">
-                <img src="./assets/icons/lock-icon.svg" alt="Lock Icon">
-            </label>
+            <div class="auth-field-group">
+                <label class="auth-field" for="password">
+                    <span class="visually-hidden">Required field: password</span>
+                    <input type="password" required id="password" placeholder="Password">
+                    <img src="./assets/icons/lock-icon.svg" alt="Lock Icon">
+                </label>
+                <span class="error-message" id="login-error"></span>
+            </div>
             <div class="auth-actions">
                 <button class="btn btn-primary" type="submit">Log in</button>
                 <button class="btn btn-secondary" type="button">Guest Log in</button>

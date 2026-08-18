@@ -48,7 +48,6 @@
 
 /* End Layout */
 
-
 /* Card & Title */
 
 .auth-card {
@@ -79,7 +78,6 @@
 
 /* End Card & Title */
 
-
 /* Form Fields */
 
 .auth-field {
@@ -106,8 +104,23 @@
   color: var(--color-form-box);
 }
 
-/* End Form Fields */
+.error-message {
+  color: var(--color-error);
+  font-size: 1rem;
+  font-weight: 400;
+}
 
+.auth-field--error {
+  border-color: var(--color-error);
+}
+
+.auth-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* End Form Fields */
 
 /* Buttons & Checkbox */
 
@@ -125,7 +138,6 @@
 }
 
 /* End Buttons & Checkbox */
-
 
 /* Footer */
 
@@ -149,7 +161,6 @@
 
 /* End Footer */
 
-
 /* Back Arrow (Sign-up Page) */
 
 .back-arrow {
@@ -161,7 +172,6 @@
 }
 
 /* End Back Arrow */
-
 
 /* Toast (Success Message After Sign-up) */
 

@@ -15,7 +15,7 @@ function isValidEmail(email) {
 
 
 /**
- * Handles the login formm submission.
+ * Handles the login form submission.
  * 
  * @param {SubmitEvent} event - The form submit event.
  * @returns {void}
@@ -26,7 +26,10 @@ function login(event) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
+    clearError('login-error', ['email', 'password']);
+
     if (!isValidEmail(email)) {
+        showError('login-error', ['email', 'password'], 'Check your email and password. Please try again.');
         return;
     }
 
@@ -47,6 +50,7 @@ function handleFirebaseLogin(email, password) {
         })
         .catch((error) => {
             console.log(error);
+            showError('login-error', ['email', 'password'], 'Check your email and password. Please try again.');
         });
 }
 
@@ -103,6 +107,33 @@ function handleFirebaseSignUp(name, email, password) {
             console.log(error);
         });
 
+}
+
+
+/**
+ * Shows an error message and highlights the given fields.
+ * @param {string} errorId - The id of the error message element.
+ * @param {string[]} fieldIds - The ids of the input fields to highlight.
+ * @param {string} message - The error message to display.
+ */
+function showError(errorId, fieldIds, message) {
+    document.getElementById(errorId).textContent = message;
+    fieldIds.forEach((id) => {
+        document.getElementById(id).parentElement.classList.add('auth-field--error');
+    });
+}
+
+
+/**
+ * Clears the error message and removes highlighting from the given fields.
+ * @param {string} errorId - The id of the error message element.
+ * @param {string[]} fieldIds - The ids of the input fields to clear.
+ */
+function clearError(errorId, fieldIds) {
+    document.getElementById(errorId).textContent = "";
+    fieldIds.forEach((id) => {
+        document.getElementById(id).parentElement.classList.remove('auth-field--error');
+    });
 }
 
 
