@@ -64,7 +64,52 @@ function showToast() {
 }
 
 
+/**
+ * Handles the signup form submission.
+ * 
+ * @param {SubmitEvent} event - The form submit event.
+ * @returns {void}
+ */
+function signUp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+
+    if (password !== confirmPassword) {
+        return;
+    }
+
+    handleFirebaseSignUp(name, email, password);
+}
+
+
+/**
+ * Creates a new user account with Firebase using email and password.
+ * 
+ * @param {string} name - The user's name.
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ */
+function handleFirebaseSignUp(name, email, password) {
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            showToast();
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+}
+
+
 document.getElementById('login-form').addEventListener('submit', login);
+document.getElementById('signup-form').addEventListener('submit', signUp);
+
+
 
 
 
