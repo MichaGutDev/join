@@ -139,15 +139,31 @@ function clearError(errorId, fieldIds) {
 }
 
 
+
+function togglePrivacyCheckbox() {
+    const checkbox = document.getElementById('privacy-policy');
+    const button = document.getElementById('signup-submit')
+    button.disabled = !checkbox.checked;
+}
+
+
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', login);
 }
 
+
 const signupForm = document.getElementById('signup-form');
 if (signupForm) {
     signupForm.addEventListener('submit', signUp);
 }
+
+
+const privacyCheckbox = document.getElementById('privacy-policy');
+if (privacyCheckbox) {
+    privacyCheckbox.addEventListener('change', togglePrivacyCheckbox);
+}
+
 
 
 
