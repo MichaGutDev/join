@@ -166,6 +166,33 @@ function guestLogin() {
 }
 
 
+/**
+ * Updates the password icon based on whether the field has content.
+ * @param {string} inputId - The id of the password input field.
+ * @param {string} iconId - The id of the icon to update.
+ */
+function updatePasswordIcon(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+    icon.src = input.value ? '../assets/icons/visibility-off.svg' : '../assets/icons/visibility.svg';
+}
+
+
+/**
+ * Toggles the visibility of a password field between hidden and visible.
+ * @param {string} inputId - The id of the password input field.
+ * @param {string} iconId - The id of the icon to update.
+ */
+function togglePasswordVisibility(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+    const isHidden = input.type === 'password';
+
+    input.type = isHidden ? 'text' : 'password';
+    icon.src = isHidden ? '../assets/icons/visibility.svg' : '../assets/icons/visibility-off.svg';
+}
+
+
 function togglePrivacyCheckbox() {
     const checkbox = document.getElementById('privacy-policy');
     const button = document.getElementById('signup-submit')
@@ -194,6 +221,19 @@ if (privacyCheckbox) {
 const guestButton = document.getElementById('guest-login');
 if (guestButton) {
     guestButton.addEventListener('click', guestLogin);
+}
+
+
+const passwordInput = document.getElementById('password');
+if (passwordInput) {
+    passwordInput.addEventListener('input', () => updatePasswordIcon('password', 'password-icon'));
+    document.getElementById('password-icon').addEventListener('click', () => togglePasswordVisibility('password', 'password-icon'));
+}
+
+const confirmPasswordInput = document.getElementById('confirm-password');
+if (confirmPasswordInput) {
+    confirmPasswordInput.addEventListener('input', () => updatePasswordIcon('confirm-password', 'confirm-password-icon'));
+    document.getElementById('confirm-password-icon').addEventListener('click', () => togglePasswordVisibility('confirm-password', 'confirm-password-icon'));
 }
 
 
