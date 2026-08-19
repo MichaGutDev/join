@@ -1,3 +1,10 @@
+.test {
+    background-color: lightblue;
+    height: 50px;
+    width: 50px;
+}
+
+
 .section-main-content {
     display: flex;
 }
@@ -59,6 +66,7 @@
 .contact-list-name {
     text-align: left;
 }
+
 .contact-list-email {
     width: fit-content;
     text-align: left;
@@ -80,6 +88,7 @@
 }
 
 .contact-initials {
+    border: solid white 2px;
     color: white;
     height: 36px;
     width: 36px;
@@ -94,12 +103,6 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-}
-
-.test {
-    background-color: lightblue;
-    height: 50px;
-    width: 50px;
 }
 
 .container-contact-details {
@@ -215,7 +218,7 @@
     justify-content: center;
     align-items: center;
     border: solid white 3px;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
     font-size: 47px;
     color: white;
     font-weight: 500;
