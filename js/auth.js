@@ -44,6 +44,9 @@ function login(event) {
  * @param {string} password - The user's password.
  */
 function handleFirebaseLogin(email, password) {
+    const loginSubmit = document.getElementById('login-submit');
+    loginSubmit.disabled = true;
+
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             window.location.href = 'html/summary.html';
@@ -51,6 +54,7 @@ function handleFirebaseLogin(email, password) {
         .catch((error) => {
             console.log(error);
             showError('login-error', ['email', 'password'], 'Check your email and password. Please try again.');
+            loginSubmit.disabled = false;
         });
 }
 
@@ -82,7 +86,7 @@ function signUp(event) {
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
-     clearError('signup-error', ['confirm-password']);
+    clearError('signup-error', ['confirm-password']);
 
     if (password !== confirmPassword) {
         showError('signup-error', ['confirm-password'], "Your passwords don't match. Please try again.");
@@ -101,13 +105,17 @@ function signUp(event) {
  * @param {string} password - The user's password.
  */
 function handleFirebaseSignUp(name, email, password) {
-        createUserWithEmailAndPassword(auth, email, password)
+    const signupSubmit = document.getElementById('signup-submit');
+    signupSubmit.disabled = true;
+
+    createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
             showToast();
         })
         .catch((error) => {
             console.log(error);
             showError('signup-error', ['email'], 'Registration failed. Please try again.');
+            signupSubmit.disabled = false;
         });
 }
 
