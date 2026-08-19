@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/board.css">
+    <link rel="shortcut icon" href="../assets/icons/favicon.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -54,10 +56,72 @@
             </div>
         </header>
 
-        <div id="to_do"></div>
-        <div id="in_progress"></div>
-        <div id="await_feedback"></div>
-        <div id="done"></div>
+        <div class="board-wrapper">
+            <section class="task-col">
+                <ul id="to_do">
+                    <li class="task-box">
+                        <h3>User Story</h3>
+                        <h4>Kochwelt Page</h4>
+                        <span>build start page with recipe</span>
+
+
+                        <div class="subtask-progress-container">
+                            <div class="progress-bar">
+
+                            </div>
+                            <span>1/2Subtasks</span>
+                        </div>
+
+
+                        <div class="initials-container">
+                            <div class="user-avatar">RB</div>
+                            <img src="../assets/icons/prio-high.svg" alt="high-priority icon">
+
+                        </div>
+
+                    </li>
+
+                    <li class="task-box">
+                        <h3>User Story</h3>
+                        <h4>Kochwelt Page</h4>
+                        <span>build start page with recipe</span>
+                        <div class="subtask-progress-container">
+                            <div class="progress-bar">
+
+                            </div>
+                            <span>1/2Subtasks</span>
+                        </div>
+                        <div>
+                            <div class="initials-container">
+                                <div class="user-avatar">RB</div>
+                            </div>
+                            <div class="placeholder for image urgent"></div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="task-col">
+                <ul id="in_progress">
+                    <li></li>
+                </ul>
+            </section>
+
+            <section class="task-col">
+                <ul id="await_feedback">
+                    <li></li>
+                </ul>
+            </section>
+
+            <section class="task-col">
+                <ul id="done">
+                    <li></li>
+                </ul>
+            </section>
+        </div>
+
+
+
 
         <!-- <section>
             <h3>User Story</h3>
