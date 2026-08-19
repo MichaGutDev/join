@@ -147,6 +147,24 @@ function clearError(errorId, fieldIds) {
 }
 
 
+/**
+ * Signs in as a guest using Firebase anonymous authentication.
+ */
+function guestLogin() {
+    const guestButton = document.getElementById('guest-login');
+    guestButton.disabled = true;
+
+    signInAnonymously(auth)
+        .then(() => {
+            window.location.href = 'html/summary.html';
+        })
+        .catch((error) => {
+            console.log(error);
+            guestButton.disabled = false;
+
+        });
+}
+
 
 function togglePrivacyCheckbox() {
     const checkbox = document.getElementById('privacy-policy');
@@ -170,6 +188,12 @@ if (signupForm) {
 const privacyCheckbox = document.getElementById('privacy-policy');
 if (privacyCheckbox) {
     privacyCheckbox.addEventListener('change', togglePrivacyCheckbox);
+}
+
+
+const guestButton = document.getElementById('guest-login');
+if (guestButton) {
+    guestButton.addEventListener('click', guestLogin);
 }
 
 
