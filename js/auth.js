@@ -44,6 +44,9 @@ function login(event) {
  * @param {string} password - The user's password.
  */
 function handleFirebaseLogin(email, password) {
+    const loginSubmit = document.getElementById('login-submit');
+    loginSubmit.disabled = true;
+
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             window.location.href = 'html/summary.html';
@@ -51,6 +54,7 @@ function handleFirebaseLogin(email, password) {
         .catch((error) => {
             console.log(error);
             showError('login-error', ['email', 'password'], 'Check your email and password. Please try again.');
+            loginSubmit.disabled = false;
         });
 }
 
@@ -82,7 +86,7 @@ function signUp(event) {
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
-     clearError('signup-error', ['confirm-password']);
+    clearError('signup-error', ['confirm-password']);
 
     if (password !== confirmPassword) {
         showError('signup-error', ['confirm-password'], "Your passwords don't match. Please try again.");
@@ -101,13 +105,17 @@ function signUp(event) {
  * @param {string} password - The user's password.
  */
 function handleFirebaseSignUp(name, email, password) {
-        createUserWithEmailAndPassword(auth, email, password)
+    const signupSubmit = document.getElementById('signup-submit');
+    signupSubmit.disabled = true;
+
+    createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
             showToast();
         })
         .catch((error) => {
             console.log(error);
             showError('signup-error', ['email'], 'Registration failed. Please try again.');
+            signupSubmit.disabled = false;
         });
 }
 
@@ -139,6 +147,51 @@ function clearError(errorId, fieldIds) {
 }
 
 
+/**
+ * Signs in as a guest using Firebase anonymous authentication.
+ */
+function guestLogin() {
+    const guestButton = document.getElementById('guest-login');
+    guestButton.disabled = true;
+
+    signInAnonymously(auth)
+        .then(() => {
+            window.location.href = 'html/summary.html';
+        })
+        .catch((error) => {
+            console.log(error);
+            guestButton.disabled = false;
+
+        });
+}
+
+
+/**
+ * Updates the password icon based on whether the field has content.
+ * @param {string} inputId - The id of the password input field.
+ * @param {string} iconId - The id of the icon to update.
+ */
+function updatePasswordIcon(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+    icon.src = input.value ? '../assets/icons/visibility-off.svg' : '../assets/icons/visibility.svg';
+}
+
+
+/**
+ * Toggles the visibility of a password field between hidden and visible.
+ * @param {string} inputId - The id of the password input field.
+ * @param {string} iconId - The id of the icon to update.
+ */
+function togglePasswordVisibility(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+    const isHidden = input.type === 'password';
+
+    input.type = isHidden ? 'text' : 'password';
+    icon.src = isHidden ? '../assets/icons/visibility.svg' : '../assets/icons/visibility-off.svg';
+}
+
 
 function togglePrivacyCheckbox() {
     const checkbox = document.getElementById('privacy-policy');
@@ -162,6 +215,25 @@ if (signupForm) {
 const privacyCheckbox = document.getElementById('privacy-policy');
 if (privacyCheckbox) {
     privacyCheckbox.addEventListener('change', togglePrivacyCheckbox);
+}
+
+
+const guestButton = document.getElementById('guest-login');
+if (guestButton) {
+    guestButton.addEventListener('click', guestLogin);
+}
+
+
+const passwordInput = document.getElementById('password');
+if (passwordInput) {
+    passwordInput.addEventListener('input', () => updatePasswordIcon('password', 'password-icon'));
+    document.getElementById('password-icon').addEventListener('click', () => togglePasswordVisibility('password', 'password-icon'));
+}
+
+const confirmPasswordInput = document.getElementById('confirm-password');
+if (confirmPasswordInput) {
+    confirmPasswordInput.addEventListener('input', () => updatePasswordIcon('confirm-password', 'confirm-password-icon'));
+    document.getElementById('confirm-password-icon').addEventListener('click', () => togglePasswordVisibility('confirm-password', 'confirm-password-icon'));
 }
 
 

@@ -83,8 +83,11 @@ let user = [{
 }
 ];
 
+let idCounter = 10;
+
 function init() {
     renderContactList();
+    console.log(idCounter);
 }
 
 

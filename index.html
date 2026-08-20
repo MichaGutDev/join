@@ -34,13 +34,13 @@
                 <label class="auth-field" for="password">
                     <span class="visually-hidden">Required field: password</span>
                     <input type="password" required id="password" placeholder="Password">
-                    <img src="./assets/icons/lock-icon.svg" alt="Lock Icon">
+                    <img src="./assets/icons/lock-icon.svg" alt="Lock Icon" id="password-icon">
                 </label>
                 <span class="error-message" id="login-error"></span>
             </div>
             <div class="auth-actions">
-                <button class="btn btn-primary" type="submit">Log in</button>
-                <button class="btn btn-secondary" type="button">Guest Log in</button>
+                <button class="btn btn-primary" type="submit" id="login-submit">Log in</button>
+                <button class="btn btn-secondary" type="button" id="guest-login">Guest Log in</button>
             </div>
         </form>
 
