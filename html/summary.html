@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
+    <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/summary.css">
     <link rel="shortcut icon" href="../assets/icons/favicon.svg" type="image/x-icon">
@@ -55,6 +56,71 @@
                 </button>
             </div>
         </header>
+
+        <div class="summary-content">
+            <div class="summary-title">
+                <h1>Join 360</h1>
+                <p class="summary-subtitle">Key Metrics at a Glance</p>
+            </div>
+
+            <section class="summary-metrics">
+                <div class="summary-cards">
+                    <div class="summary-cards-row">
+                        <div class="summary-card">
+                            <img src="../assets/icons/edit-icon-white.svg" alt="" class="summary-card-icon">
+                            <div class="summary-card-text">
+                                <span class="summary-card-number" id="todo-count">1</span>
+                                <span class="summary-card-label">To-do</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <img src="../assets/icons/check-icon.svg" alt="" class="summary-card-icon">
+                            <div class="summary-card-text">
+                                <span class="summary-card-number" id="done-count">1</span>
+                                <span class="summary-card-label">Done</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-card summary-card--urgent">
+                        <div class="summary-card-icon-text">
+                            <img src="../assets/icons/prio-high-white.svg" alt="" class="summary-card-icon">
+                            <div class="summary-card-text">
+                                <span class="summary-card-number" id="urgent-count">1</span>
+                                <span class="summary-card-label">Urgent</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-data">
+                            <span class="urgent-card-date" id="urgent-date">October 16, 2022</span>
+                            <span class="urgent-card-preview" id="urgent-preview">Upcoming Deadline</span>
+                        </div>
+                    </div>
+                    <div class="summary-cards-row">
+                        <div class="summary-card summary-card--compact">
+                            <div class="summary-card-text">
+                                <span class="summary-card-number" id="board-count">5</span>
+                                <span class="summary-card-label">Tasks in Board</span>
+                            </div>
+                        </div>
+                        <div class="summary-card summary-card--compact">
+                            <div class="summary-card-text">
+                                <span class="summary-card-number" id="progress-count">2</span>
+                                <span class="summary-card-label">Tasks in Progress</span>
+                            </div>
+                        </div>
+                        <div class="summary-card summary-card--compact">
+                            <div class="summary-card-text">
+                                <span class="summary-card-number" id="feedback-count">2</span>
+                                <span class="summary-card-label">Awaiting Feedback</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-greeting">
+                    <p class="summary-greeting-welcome" id="greeting-welcome">Good morning,</p>
+                    <p class="summary-greeting-name" id="greeting-name">Sofia Müller</p>
+                </div>
+            </section>
+        </div>
 
 
     </main>

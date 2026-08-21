@@ -1,0 +1,179 @@
+/* Content Wrapper */
+
+.summary-content {
+    padding-top: 110px;
+    padding-left: 98px;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* End Content Wrapper */
+
+
+/* Title */
+
+.summary-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.summary-subtitle {
+    border-left: 3px solid var(--color-underscore);
+    padding-left: 16px;
+    font-size: 27px;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+/* End Title */
+
+
+/* Cards Layout */
+
+.summary-metrics {
+    display: flex;
+    gap: 32px;
+}
+
+.summary-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.summary-cards-row {
+    display: flex;
+    gap: 32px;
+}
+
+/* End Cards Layout */
+
+
+/* Card Base (Row 1 + Urgent) */
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 264px;
+    height: 168px;
+    padding: 38px 19px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 0 4px rgb(0 0 0 / 40%);
+}
+
+.summary-card-icon {
+    box-sizing: border-box;
+    width: 69px;
+    height: 69px;
+    padding: 18.5px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+
+.summary-card-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.summary-card-number {
+    font-size: 64px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.summary-card-label {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* End Card Base */
+
+
+/* Urgent Card (wide, two content groups) */
+
+.summary-card--urgent {
+    width: 560px;
+}
+
+.summary-card--urgent .summary-card-icon {
+    background-color: #FF3D00;
+}
+
+.summary-card-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.summary-card-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    border-left: 2px solid #D1D1D1;
+    padding-left: 18px;
+    margin-left: 40px;
+}
+
+.urgent-card-date {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.urgent-card-preview {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+/* End Urgent Card */
+
+
+/* Compact Card (Row 3) */
+
+.summary-card--compact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 168px;
+    height: 168px;
+    padding: 25px 0;
+    gap: 13px;
+}
+
+.summary-card--compact .summary-card-label {
+    width: 100px;
+}
+
+/* End Compact Card */
+
+
+/* Greeting */
+
+.summary-greeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.summary-greeting-welcome {
+    font-size: 47px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.summary-greeting-name {
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--color-login-privacy-policy);
+}
+
+/* End Greeting */
