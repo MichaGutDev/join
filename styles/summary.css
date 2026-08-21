@@ -35,7 +35,7 @@
 
 .summary-metrics {
     display: flex;
-    gap: 32px;
+    gap: 80px;
 }
 
 .summary-cards {
@@ -68,12 +68,19 @@
 }
 
 .summary-card-icon {
-    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
     width: 69px;
     height: 69px;
-    padding: 18.5px;
     border-radius: 50%;
     background-color: var(--color-primary);
+}
+
+.summary-card-icon-img {
+    width: 25px;
+    height: 25px;
 }
 
 .summary-card-text {
